@@ -18,6 +18,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  VITE_BASE_URL_PROD: 'http://34.199.237.66'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -50,11 +53,11 @@ jobs:
           restore-keys: |
             npm-${{github.workflow}}-${{ runner.os }}-${{ hashFiles('**package.json') }}
 
-      - name: Write environment
-        run: |
-          echo $env > .env
-          sed -i 's/ /\n/g' .env
-          source .env
+      #      - name: Write environment
+      #        run: |
+      #          echo $env > .env
+      #          sed -i 's/ /\n/g' .env
+      #          source .env
 
       - name: Install dependencies
         run: npm install --include=dev
