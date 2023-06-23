@@ -1,2 +1,2 @@
 # AI-Chats
-Lets build something cooler that chatgpt
+Lets build something cooler than chatgpt
