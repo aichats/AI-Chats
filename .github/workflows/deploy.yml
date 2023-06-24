@@ -13,12 +13,17 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-
+#    defaults:
+#      run:
+#        working-directory:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -34,7 +39,6 @@ jobs:
       - name: Deploy React to GitHub Pages
         uses: bitovi/github-actions-react-to-ghp@v1.2.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
           checkout: false
           # Specifies the path of the static assets after building
           path: build
