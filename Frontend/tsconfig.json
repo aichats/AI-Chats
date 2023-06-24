@@ -6,9 +6,10 @@
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": "./",
-    "paths":{
-      "@modules/*":["src/modules/*"],
-      "@assets/*":["src/assets/*"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@components": ["src/components"],
+      "@assets": ["src/assets"]
     },
 
     /* Bundler mode */
@@ -24,6 +25,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
+
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
