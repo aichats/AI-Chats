@@ -1,13 +1,7 @@
-import { MainBody } from "./components/MainBody";
-import { SelectBar } from "./components/SelectBar";
+import { ChatBoard } from "@modules/ChatBoard";
 
 function App() {
-  return (
-    <div className="h-screen w-full flex">
-      <SelectBar />
-      <MainBody />
-    </div>
-  );
+  return <ChatBoard />;
 }
 
 export default App;

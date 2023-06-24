@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 .custom-gutter-horizontal {
     width: 0.1rem;
     --tw-bg-opacity: 1;
