@@ -1,5 +1,5 @@
-import { MainBody } from "@components/MainBody";
-import { SelectBar } from "@components/SelectBar";
+import { MainBody } from "./components/MainBody";
+import { SelectBar } from "./components/SelectBar";
 
 function App() {
   return (
