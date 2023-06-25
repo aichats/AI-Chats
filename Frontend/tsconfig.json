@@ -7,9 +7,8 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@/*": ["src/*"],
-      "@components": ["src/components"],
-      "@assets": ["src/assets"]
+      "@modules/*": ["src/modules/*"],
+      "@assets/*": ["src/assets/*"]
     },
 
     /* Bundler mode */
@@ -25,7 +24,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true
-
   },
   "include": ["src"],
   "references": [{ "path": "./tsconfig.node.json" }]
