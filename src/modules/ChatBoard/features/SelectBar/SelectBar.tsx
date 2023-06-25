@@ -15,7 +15,7 @@ export const SelectBar = () => {
   return (
     <div className="h-full w-[20%] bg-black p-2">
       <div className="text-2xl h-[5%]  text-slate-100 font-semibold text-center">
-        Nas AI
+        AI Chats
       </div>
       <div className="h-[90%] pt-2 overflow-y-auto pr-2">
         {/* different days list */}
