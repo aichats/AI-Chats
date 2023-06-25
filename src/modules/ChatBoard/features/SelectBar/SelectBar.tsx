@@ -40,12 +40,12 @@ export const SelectBar = () => {
         </div>
       </div>
       <div className="text-2xl h-[5%] flex items-center justify-center text-slate-100  text-center">
-        <button
+        {/* <button
           type="button"
           className="flex items-center justify-center bg-white py-1 px-3 w-[90%]  rounded-lg space-x-3 "
         >
           <FcGoogle size={18} /> <small className="text-black">Login</small>
-        </button>
+        </button> */}
         {/* <small>Ikeji chukwunonso</small> */}
       </div>
     </div>
