@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  VITE_BASE_URL_PROD:"https://032e-2401-4900-4c61-8844-385c-15a9-7ae8-e549.ngrok-free.app"
+  VITE_BASE_URL_PROD: "https://032e-2401-4900-4c61-8844-385c-15a9-7ae8-e549.ngrok-free.app"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -27,6 +27,7 @@ jobs:
 #    defaults:
 #      run:
 #        working-directory:
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -47,11 +48,10 @@ jobs:
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
-          path: ${{  steps.npm-cache.outputs.NPM_CACHE_DIR  }}
+          path: ${{ steps.npm-cache.outputs.NPM_CACHE_DIR }}
           key: ${{ runner.os }}-yarn-${{ hashFiles('**package.json') }}
           restore-keys: |
             ${{ runner.os }}-yarn-${{ hashFiles('**package.json') }}
-
 
       - name: Install dependencies
         run: npm install
@@ -61,6 +61,6 @@ jobs:
         with:
           checkout: false
           # Specifies the path of the static assets after building
-          path: ${{  steps.npm-build.outputs.NPM_BUILD_PATH  }}
+          path: ${{ steps.npm-build.outputs.NPM_BUILD_PATH }}
           # Specifies the command to run after npm ci for the build
           build_command: npm run build
