@@ -50,30 +50,33 @@ export const Display = () => {
 
   return (
     <div className="h-[80%] bg-orange-50 p-4 overflow-y-auto ">
-      {requests.map((req, id) => (
-        <div key={id} className="w-full h-auto my-10 flex flex-col gap-4">
-          {/* user */}
-          <div className="w-full h-auto ">
-            <div className="w-6 h-6  ">
-              <FaUser size={20} />
+      {requests.length > 0 &&
+        requests.map((req, id) => (
+          <div key={id} className="w-full h-auto my-10 flex flex-col gap-4">
+            {/* user */}
+            <div className="w-full h-auto ">
+              <div className="w-6 h-6  ">
+                <FaUser size={20} />
+              </div>
+              <div className="text-sm pl-6">{req.out.message}</div>
             </div>
-            <div className="text-sm pl-6">{req.out.message}</div>
+            {/* bot */}
+            <div className=" w-full h-auto">
+              <div className="w-6 h-6 ">
+                <BsRobot size={20} />
+              </div>
+              <div className="text-sm pl-6 pb-4 pt-2 bg-gray-300">
+                {req.in.message}
+              </div>
+            </div>
           </div>
-          {/* bot */}
-          <div className=" w-full h-auto">
-            <div className="w-6 h-6 ">
-              <BsRobot size={20} />
-            </div>
-            <div className="text-sm pl-6 pb-4 pt-2 bg-gray-300">
-              {req.in.message}
-            </div>
-          </div>
-        </div>
-      ))}
+        ))}
       <div ref={bottomEl} />
-      {/* <div className="w-[60%] h-[70%] border m-auto rounded-md flex justify-center  text-center items-center">
-        <h3>No requests submitted yet</h3>
-      </div> */}
+      {requests.length == 0 && (
+        <div className="w-[60%] h-[70%] border m-auto rounded-md flex justify-center  text-center items-center">
+          <h3>No requests submitted yet</h3>
+        </div>
+      )}
     </div>
   );
 };
