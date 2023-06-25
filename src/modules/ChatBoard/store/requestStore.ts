@@ -63,7 +63,7 @@ export const useRequestStore = create<Request>()(
       requests: [],
       mainchat_id: null,
       type: "",
-      requestLoading: true,
+      requestLoading: false,
 
       setRequestLoading(act: boolean) {
         set(() => ({
