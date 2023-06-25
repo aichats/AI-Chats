@@ -20,13 +20,16 @@ export const ChatForm = () => {
       message: text,
       chat_id: reqStore.mainchat_id,
     };
+
+    reqStore.setRequestLoading(true);
     createChat(data, clientId, "text");
+    setText("");
     setClientId(clientId + 1);
   };
 
   const changeFile = (e: any) => {
     setSelectedFile(e.target.files[0]);
-
+    reqStore.setRequestLoading(true);
     uploadPdf(e.target.files[0], clientId, "file", reqStore.mainchat_id);
   };
 
@@ -65,7 +68,8 @@ export const ChatForm = () => {
           </button>
           <textarea
             onChange={(e) => setText(e.target.value)}
-            className="w-full h-full  p-0 px-1 text-sm resize-none  bg-slate-100 outline-none focus:outline-none border-none focus:ring-0"
+            value={text}
+            className="w-full h-full  p-0 px-1 pt-2 text-sm resize-none  bg-slate-100 outline-none focus:outline-none border-none focus:ring-0"
           />
           <button
             type="submit"
@@ -75,6 +79,11 @@ export const ChatForm = () => {
           </button>
         </form>
       </div>
+      {reqStore.requestLoading && (
+        <div className="w-[80%] h-[20%] text-center text-gray-400 py-2">
+          <small>processing...</small>
+        </div>
+      )}
       <div className="w-[80%] h-[40%] text-center text-gray-400 py-2">
         <small>search documents and get detailed insights.</small>
       </div>

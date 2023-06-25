@@ -15,6 +15,8 @@ interface IRequest {
 interface Request {
   requests: IRequest[];
   mainchat_id: number | null;
+  requestLoading: boolean;
+  setRequestLoading: (act: boolean) => void;
   setRequests: (list: IRequest[]) => void;
   addRequest: (
     msg: string,
@@ -61,6 +63,13 @@ export const useRequestStore = create<Request>()(
       requests: [],
       mainchat_id: null,
       type: "",
+      requestLoading: true,
+
+      setRequestLoading(act: boolean) {
+        set(() => ({
+          requestLoading: act,
+        }));
+      },
       //set requests array
       setRequests(list: IRequest[]) {
         set(() => ({

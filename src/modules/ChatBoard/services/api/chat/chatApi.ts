@@ -37,9 +37,10 @@ export const createChat = async (
         },
       ],
     });
+    useRequestStore.setState({ requestLoading: false });
     return rData;
   } catch (error) {
-    console.log(error);
+    useRequestStore.setState({ requestLoading: false });
     return false;
   }
 };
@@ -92,9 +93,10 @@ export const uploadPdf = async (
         },
       ],
     });
+    useRequestStore.setState({ requestLoading: false });
     return rData;
   } catch (error) {
-    console.log(error);
+    useRequestStore.setState({ requestLoading: false });
     return false;
   }
 };

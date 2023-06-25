@@ -1,7 +1,15 @@
 import { FcGoogle } from "react-icons/fc";
 import { BiMessageSquareDots } from "react-icons/bi";
+import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
+import { useEffect, useState } from "react";
 
 export const SelectBar = () => {
+  const requestStore = useRequestStore();
+  const [focusedText, setFocusedText] = useState<string>("");
+  useEffect(() => {
+    setFocusedText(requestStore.requests[0].out.message);
+    console.log(requestStore.requests[0].out.chat_id);
+  }, [requestStore]);
   return (
     <div className="h-full w-[20%] bg-black p-2">
       <div className="text-2xl h-[5%]  text-slate-100 font-semibold text-center">
@@ -24,22 +32,20 @@ export const SelectBar = () => {
             >
               <BiMessageSquareDots size={16} />{" "}
               <span>
-                {"Data For the test with longer information".substr(0, 30)}{" "}
-                {"Data For the test with longer information".length > 10
-                  ? ". . ."
-                  : ""}
+                {focusedText.substr(0, 30)}{" "}
+                {focusedText.length > 10 ? ". . ." : ""}
               </span>
             </li>
           </ul>
         </div>
       </div>
       <div className="text-2xl h-[5%] flex items-center justify-center text-slate-100  text-center">
-        <button
+        {/* <button
           type="button"
           className="flex items-center justify-center bg-white py-1 px-3 w-[90%]  rounded-lg space-x-3 "
         >
           <FcGoogle size={18} /> <small className="text-black">Login</small>
-        </button>
+        </button> */}
         {/* <small>Ikeji chukwunonso</small> */}
       </div>
     </div>
