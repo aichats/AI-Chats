@@ -32,7 +32,7 @@ export const SelectBar = () => {
               data-te-ripple-color="light"
               title="Data For the test with longer information"
             >
-              <BiMessageSquareDots size={16} />{" "}
+              {focusedText && <BiMessageSquareDots size={16} />}
               <span>
                 {focusedText.substr(0, 30)}{" "}
                 {focusedText.length > 10 ? ". . ." : ""}
