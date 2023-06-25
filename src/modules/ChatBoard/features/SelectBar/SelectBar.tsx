@@ -7,8 +7,10 @@ export const SelectBar = () => {
   const requestStore = useRequestStore();
   const [focusedText, setFocusedText] = useState<string>("");
   useEffect(() => {
-    setFocusedText(requestStore.requests[0].out.message);
-    console.log(requestStore.requests[0].out.chat_id);
+    if (requestStore.requests.length > 0) {
+      setFocusedText(requestStore.requests[0].out.message);
+      console.log(requestStore.requests[0].out.chat_id);
+    }
   }, [requestStore]);
   return (
     <div className="h-full w-[20%] bg-black p-2">
