@@ -33,6 +33,19 @@ jobs:
         with:
           node-version: 18
 
+      - name: Get yarn cache
+        id: npm-cache
+        run: echo "NPM_CACHE_DIR=$(pwd)/node_modules" >> "${GITHUB_OUTPUT}"
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{  steps.npm-cache.outputs.NPM_CACHE_DIR  }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-${{ hashFiles('**package.json') }}
+
+
       - name: Install dependencies
         run: npm install
 
