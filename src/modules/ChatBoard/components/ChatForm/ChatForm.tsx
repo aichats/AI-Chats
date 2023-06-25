@@ -80,7 +80,7 @@ export const ChatForm = () => {
         </form>
       </div>
       {reqStore.requestLoading && (
-        <div className="w-[80%] h-[20%] text-center text-gray-400 py-2">
+        <div className="w-[80%] h-[20%] text-center text-gray-600 py-2">
           <small>processing...</small>
         </div>
       )}
