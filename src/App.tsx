@@ -1,12 +1,14 @@
-import { MainBody } from "./components/MainBody";
-import { SelectBar } from "./components/SelectBar";
+import { ChatBoard } from "@modules/ChatBoard";
+
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
-    <div className="h-screen w-full flex">
-      <SelectBar />
-      <MainBody />
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <ChatBoard />
+    </QueryClientProvider>
   );
 }
 
