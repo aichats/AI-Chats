@@ -37,6 +37,10 @@ jobs:
         id: npm-cache
         run: echo "NPM_CACHE_DIR=$(pwd)/node_modules" >> "${GITHUB_OUTPUT}"
 
+      - name: Get Build Path
+        id: npm-build
+        run: echo "NPM_BUILD_PATH=$(pwd)/build" >> "${GITHUB_OUTPUT}"
+
       - name: Cache dependencies
         uses: actions/cache@v3
         with:
@@ -54,6 +58,6 @@ jobs:
         with:
           checkout: false
           # Specifies the path of the static assets after building
-          path: build
+          path: ${{  steps.npm-build.outputs.NPM_BUILD_PATH  }}
           # Specifies the command to run after npm ci for the build
           build_command: npm run build
