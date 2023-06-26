@@ -1,0 +1,66 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main # Adjust the branch name as per your project setup
+    paths:
+      - '.github/workflows/deploy.yml'
+  pull_request:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+env:
+  VITE_BASE_URL_PROD: "http://34.199.237.66"
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    #    defaults:
+    #      run:
+    #        working-directory:
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Get npm cache
+        id: npm-cache
+        run: echo "NPM_CACHE_DIR=$(pwd)/node_modules" >> "${GITHUB_OUTPUT}"
+
+      - name: Get Build Path
+        id: npm-build
+        run: echo "NPM_BUILD_PATH=$(pwd)/build" >> "${GITHUB_OUTPUT}"
+
+      - name: Cache dependencies
+        uses: actions/cache@v3
+        with:
+          path: ${{ steps.npm-cache.outputs.NPM_CACHE_DIR }}
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**package.json') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-${{ hashFiles('**package.json') }}
+
+      - name: Install dependencies
+        run: npm install --include=dev
+
+      - name: Deploy React to GitHub Pages
+        uses: bitovi/github-actions-react-to-ghp@v1.2.0
+        with:
+          checkout: false
+          # Specifies the path of the static assets after building
+          path: ${{ steps.npm-build.outputs.NPM_BUILD_PATH }}
+          # Specifies the command to run after npm ci for the build
+          build_command: npm run build
