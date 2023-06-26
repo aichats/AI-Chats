@@ -6,6 +6,9 @@ import path from "path";
 export default defineConfig({
   build: {
     outDir: "build",
+    rollupOptions: {
+      input: '/public/index.html',
+    },
   },
   plugins: [react()],
   resolve: {
