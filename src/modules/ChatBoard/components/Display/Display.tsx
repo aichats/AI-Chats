@@ -39,7 +39,7 @@ export const Display = () => {
       }
       //@ts-ignore
       if (index.current < selectedData.in.message.length) {
-        let addChar = setInterval(tick, 500);
+        const addChar = setInterval(tick, 500);
         return () => clearInterval(addChar);
       }
     }
