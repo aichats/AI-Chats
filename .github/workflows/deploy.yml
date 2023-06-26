@@ -15,7 +15,7 @@ env:
   VITE_BASE_URL_PROD: "https://34.199.237.66"
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
