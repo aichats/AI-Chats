@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
 
 env:
-  VITE_BASE_URL_PROD: "https://032e-2401-4900-4c61-8844-385c-15a9-7ae8-e549.ngrok-free.app"
+  VITE_BASE_URL_PROD: "http://34.199.237.66"
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
