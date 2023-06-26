@@ -62,7 +62,7 @@ export const uploadPdf = async (
     //   data: data,
     // });
     const res = axios.post(
-      `${import.meta.env.VITE_BASE_URL_PROD}/chat/${
+      `${import.meta.env.VITE_BASE_URL}/chat/${
         chat_id == null ? 0 : chat_id
       }/upload`,
       formData,
