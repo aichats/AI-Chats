@@ -7,8 +7,7 @@
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
-      "@modules/*": ["src/modules/*"],
-      "@assets/*": ["public/assets/*"]
+      "@modules/*": ["src/modules/*"]
     },
 
     /* Bundler mode */
