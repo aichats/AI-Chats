@@ -32,7 +32,7 @@ In the future, the team plans to integrate AI Chats with other platforms and ser
 
 ## Try It Out
 
-Visit [AI Chats](https://aichats.surge.sh) to try out the chatbot and experience its capabilities.
+Visit [AI Chats](http://aichats.surge.sh) to try out the chatbot and experience its capabilities.
 
 ## Getting Started
 
