@@ -12,7 +12,7 @@ export const createChat = async (
 ) => {
   try {
     const res = await axiosInstance({
-      url: "/chat",
+      url: "/chat/v2",
       method: "POST",
       data: data,
     });
@@ -61,10 +61,10 @@ export const uploadPdf = async (
     //   method: "POST",
     //   data: data,
     // });
-    const res = axios.post(
+    const res = axios.put(
       `${import.meta.env.VITE_BASE_URL_PROD}/chat/${
-        chat_id == null ? 0 : chat_id
-      }/upload`,
+        chat_id
+      }/upload/v2`,
       formData,
       {
         headers: {
@@ -81,7 +81,7 @@ export const uploadPdf = async (
           out: {
             sender: "user",
             message: data.name,
-            chat_id: chat_id == null ? 0 : chat_id,
+            chat_id: chat_id,
           },
           in: {
             sender: rData.sender,
