@@ -15,7 +15,6 @@ axiosInstance.interceptors.request.use(
     config.headers["Content-Type"] = "application/json";
     config.headers["accept"] = "application/json";
 
-    // config.headers['Content-Type'] = 'application/json';
     return config;
   },
   (error) => {
