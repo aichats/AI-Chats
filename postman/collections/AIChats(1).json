@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "c39a6bcb-c121-4917-9374-02b7cf96d9bb",
+		"_postman_id": "3a3876a8-4d5f-4724-9de8-6afc76acd044",
 		"name": "AIChats",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "11058592-c39a6bcb-c121-4917-9374-02b7cf96d9bb"
+		"_uid": "11058592-3a3876a8-4d5f-4724-9de8-6afc76acd044"
 	},
 	"item": [
 		{
 			"name": "Home",
-			"id": "7f673a66-ebdf-4a5d-b766-229567cc9a2a",
+			"id": "224ab75f-8f07-4fc5-8eb5-1de05eb6eabe",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -24,7 +24,7 @@
 			},
 			"response": [
 				{
-					"id": "639a4e76-5fd9-471d-bfd2-cf0d7b2690e0",
+					"id": "797906e1-c8bf-4848-be39-08524a7519c5",
 					"name": "Root",
 					"originalRequest": {
 						"method": "GET",
@@ -39,7 +39,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -69,7 +68,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8e3a04ef-d806-45d7-95f1-9309881acac7",
+						"id": "3ae987d2-f2a0-4988-a488-77d0819ec1a3",
 						"exec": [
 							"let body = pm.response.json()",
 							"",
@@ -87,7 +86,7 @@
 					}
 				}
 			],
-			"id": "fdabfe41-479e-4d89-a5ea-269d96ef9b8a",
+			"id": "36e7f61c-9a8e-42d4-9d3e-52eb0b4231da",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -106,22 +105,24 @@
 			},
 			"response": [
 				{
-					"id": "eaf27b9c-2067-4a36-9957-da7ca1745c65",
+					"id": "80b3fcbf-f973-405c-b4c2-349c177d0b8f",
 					"name": "Root",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "{{u}}",
+							"raw": "{{u}}/health",
 							"host": [
 								"{{u}}"
+							],
+							"path": [
+								"health"
 							]
 						}
 					},
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -147,7 +148,7 @@
 		},
 		{
 			"name": "Cors",
-			"id": "7d7b00fc-332d-42a2-853e-18cd620928a2",
+			"id": "271f3c94-cdae-45c5-95bd-fbf69c549173",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -190,7 +191,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a7ba25ea-cac5-4302-96e7-d646e9e4f746",
+						"id": "094b023c-2173-4e09-b49e-d0a5a7207f38",
 						"exec": [
 							"function sendRequest(id,s){",
 							"    console.log(id,s)",
@@ -211,7 +212,7 @@
 					}
 				}
 			],
-			"id": "878715f2-ad42-483d-8e71-23a292836985",
+			"id": "7bcdb728-095c-45a5-a3d5-b15966a327cd",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -228,26 +229,26 @@
 					}
 				},
 				"url": {
-					"raw": "{{u}}/chat/v2",
+					"raw": "{{u}}/chat/v1",
 					"host": [
 						"{{u}}"
 					],
 					"path": [
 						"chat",
-						"v2"
+						"v1"
 					]
 				}
 			},
 			"response": [
 				{
-					"id": "0f5fed91-f58f-4dc1-a29c-df527b1d05fb",
+					"id": "7dce90d3-03d8-4807-a397-cf5c23c431f2",
 					"name": "Chat Create v0",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"Hello, how are you?\",\n  \"chat_id\": null\n}",
+							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"I am Hiro, I am a golang engineer.\",\n  \"chat_id\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -255,19 +256,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{u}}/chat",
+							"raw": "{{u}}/chat/v1",
 							"host": [
 								"{{u}}"
 							],
 							"path": [
-								"chat"
+								"chat",
+								"v1"
 							]
 						}
 					},
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -290,14 +291,14 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"IndyStar\\n\\nWith the Joe Biden and Kamala Harris win looming, one can only hope that many minds will change. It appears that we may not know the actual outcome of this election for a while yet, and for many, that is concerning. What might be more concerning, however, is that this election has furthered the divide between many Americans.\\n\\nHow will we come together as a nation after such a heated and divisive election?\\n\\nThe battleground states of Wisconsin, Arizona\",\n    \"chat_id\": 1\n}"
 				},
 				{
-					"id": "261e29f8-c526-4eaa-bb02-48380f79c594",
+					"id": "1293823a-6c2e-4f01-b020-07e299ffa527",
 					"name": "Chat Create v0",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"Two people have pleaded guilty and been sent to prison; the law has been clarified; a huge deterrent message has been delivered.\",\n  \"chat_id\": 1\n}",
+							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"I am Hiro, I am a golang engineer.\",\n  \"chat_id\": null\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -305,19 +306,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{u}}/chat",
+							"raw": "{{u}}/chat/v1",
 							"host": [
 								"{{u}}"
 							],
 							"path": [
-								"chat"
+								"chat",
+								"v1"
 							]
 						}
 					},
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -340,7 +341,7 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"Starlight\\n\\nOne fine day, I looked up and saw the starlight in the sky. All of the stars were twinkling and it was such a beautiful sight. I felt like I could reach out and touch them and I felt so small and insignificant. The starlight had been there for millions of years, but no one had paid attention to it until that moment. I could feel the power of the universe in that moment, and it made me feel so connected to everything. I\",\n    \"chat_id\": \"1\"\n}"
 				},
 				{
-					"id": "137cd236-2dcb-4a85-ac4c-15a6f285ac9b",
+					"id": "ad0ad0e5-1069-4413-883a-ef7902afed49",
 					"name": "Chat Create v1",
 					"originalRequest": {
 						"method": "POST",
@@ -368,7 +369,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -389,63 +389,12 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \" Hi Hiro, it's nice to meet you. I'm an AI and I'm interested in learning more about Golang engineering. Can you tell me more about it?\",\n    \"chat_id\": \"03c5d673753743c8b38f30da9b58f802\"\n}"
-				},
-				{
-					"id": "bd1a75fb-5a53-4ac8-84ba-c379420403a8",
-					"name": "Chat Create v2",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"I am Hiro, I am a golang engineer.\",\n  \"chat_id\": null\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{u}}/chat/v2",
-							"host": [
-								"{{u}}"
-							],
-							"path": [
-								"chat",
-								"v2"
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
-					"header": [
-						{
-							"key": "date",
-							"value": "Tue, 27 Jun 2023 18:19:02 GMT"
-						},
-						{
-							"key": "server",
-							"value": "uvicorn"
-						},
-						{
-							"key": "content-length",
-							"value": "113"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"Hello Hiro, how can I assist you today?\",\n    \"chat_id\": \"4388081e510e4307b56b4957a1dfe7fa\"\n}"
 				}
 			]
 		},
 		{
 			"name": "PDF Upload",
-			"id": "8e7722a9-73a8-45ae-a4d0-8d9e4c6e1f27",
+			"id": "fe07e8c2-e737-4065-b33e-d4995e61e6a8",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -458,20 +407,12 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": [
-								"/Users/hiro/aiFame/aichatsback/testdata/go.pdf"
-							]
-						},
-						{
-							"key": "filename",
-							"value": "",
-							"type": "text",
-							"disabled": true
+							"src": "/Users/hiro/aiFame/aichatsback/testdata/Hiro Hamada LW Certificate_ Python.pdf"
 						}
 					]
 				},
 				"url": {
-					"raw": "{{u}}/chat/:id/upload/v2",
+					"raw": "{{u}}/chat/:id/upload/v1",
 					"host": [
 						"{{u}}"
 					],
@@ -479,10 +420,11 @@
 						"chat",
 						":id",
 						"upload",
-						"v2"
+						"v1"
 					],
 					"variable": [
 						{
+							"id": "d7555a70-33a3-4084-aebd-aab00e4cd786",
 							"key": "id",
 							"value": "{{chat_id}}"
 						}
@@ -491,10 +433,10 @@
 			},
 			"response": [
 				{
-					"id": "244e5280-9480-4f2f-9731-a05b85b28561",
+					"id": "dff61952-1591-4859-a026-62a8eaeb859c",
 					"name": "PDF Upload v0",
 					"originalRequest": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "formdata",
@@ -502,26 +444,26 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": [
-										"/Users/hiro/aiFame/aichatsback/testdata/Hiro Hamada LW Certificate_ Python.pdf"
-									]
+									"src": "/Users/hiro/aiFame/aichatsback/testdata/Hiro Hamada LW Certificate_ Python.pdf"
 								}
 							]
 						},
 						"url": {
-							"raw": "{{u}}/chat/:id/upload",
+							"raw": "{{u}}/chat/:id/upload/v1",
 							"host": [
 								"{{u}}"
 							],
 							"path": [
 								"chat",
 								":id",
-								"upload"
+								"upload",
+								"v1"
 							],
 							"variable": [
 								{
+									"id": "d7555a70-33a3-4084-aebd-aab00e4cd786",
 									"key": "id",
-									"value": "\"\""
+									"value": "{{chat_id}}"
 								}
 							]
 						}
@@ -529,7 +471,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -552,7 +493,7 @@
 					"body": "{\n    \"message\": \"Uploaded successfully\",\n    \"chat_id\": 1\n}"
 				},
 				{
-					"id": "3ae693d6-4c4e-4fb6-8f96-103514e2bf0b",
+					"id": "d9b7e47d-4389-4611-8265-252cf60f07fc",
 					"name": "PDF Upload v1 Doesnot support inference to chat",
 					"originalRequest": {
 						"method": "PUT",
@@ -563,9 +504,7 @@
 								{
 									"key": "file",
 									"type": "file",
-									"src": [
-										"/Users/hiro/aiFame/aichatsback/testdata/Hiro Hamada LW Certificate_ Python.pdf"
-									]
+									"src": "/Users/hiro/aiFame/aichatsback/testdata/Hiro Hamada LW Certificate_ Python.pdf"
 								}
 							]
 						},
@@ -582,6 +521,7 @@
 							],
 							"variable": [
 								{
+									"id": "d7555a70-33a3-4084-aebd-aab00e4cd786",
 									"key": "id",
 									"value": "{{chat_id}}"
 								}
@@ -591,7 +531,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -612,148 +551,12 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"uploaded successfully\",\n    \"chat_id\": \"6bf57d6585cb4a3e85078989bf569051\"\n}"
-				},
-				{
-					"id": "fe6d737c-2bd3-40a7-93e3-36ea953f10cd",
-					"name": "PDF Upload v1.1",
-					"originalRequest": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": [
-										"/Users/hiro/aiFame/aichatsback/testdata/prompt.txt"
-									]
-								},
-								{
-									"key": "filename",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{u}}/chat/:id/upload/v1",
-							"host": [
-								"{{u}}"
-							],
-							"path": [
-								"chat",
-								":id",
-								"upload",
-								"v1"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{chat_id}}"
-								}
-							]
-						}
-					},
-					"status": "Bad Request",
-					"code": 400,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
-					"header": [
-						{
-							"key": "date",
-							"value": "Tue, 27 Jun 2023 19:40:24 GMT"
-						},
-						{
-							"key": "server",
-							"value": "uvicorn"
-						},
-						{
-							"key": "content-length",
-							"value": "113"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"Only pdf files are supported currently\",\n    \"chat_id\": \"3bf5cf7f40564a068db77a89707c5887\",\n    \"status_code\": 400\n}"
-				},
-				{
-					"id": "1b339b20-9414-4226-84c2-73bb4f4b04ce",
-					"name": "PDF Upload v2",
-					"originalRequest": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file",
-									"type": "file",
-									"src": [
-										"/Users/hiro/aiFame/aichatsback/testdata/prompt.txt"
-									]
-								},
-								{
-									"key": "filename",
-									"value": "",
-									"type": "text",
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{u}}/chat/:id/upload/v2",
-							"host": [
-								"{{u}}"
-							],
-							"path": [
-								"chat",
-								":id",
-								"upload",
-								"v2"
-							],
-							"variable": [
-								{
-									"key": "id",
-									"value": "{{chat_id}}"
-								}
-							]
-						}
-					},
-					"status": "OK",
-					"code": 200,
-					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
-					"header": [
-						{
-							"key": "date",
-							"value": "Tue, 27 Jun 2023 19:41:26 GMT"
-						},
-						{
-							"key": "server",
-							"value": "uvicorn"
-						},
-						{
-							"key": "content-length",
-							"value": "113"
-						},
-						{
-							"key": "content-type",
-							"value": "application/json"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"error\": \"Only pdf files are supported currently\",\n    \"chat_id\": \"3bf5cf7f40564a068db77a89707c5887\",\n    \"status_code\": 400\n}"
 				}
 			]
 		},
 		{
 			"name": "Healthcheck http",
-			"id": "29661ce6-d3fe-44f9-8b9c-646309ee68db",
+			"id": "aca5e947-dda0-4f76-a7d3-6845f09d4f23",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -775,7 +578,7 @@
 		},
 		{
 			"name": "Healthcheck https",
-			"id": "ae3ea6d6-7c4c-4d1c-ab31-0457a1513f20",
+			"id": "532a75ef-be38-4f57-9477-66e2abcea4d5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -786,66 +589,6 @@
 					"raw": "{{u}}",
 					"host": [
 						"{{u}}"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Chat",
-			"id": "227a9743-0ed6-49a8-9a74-5acf7aeea981",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "{{u}}/chat/v2/:id",
-					"host": [
-						"{{u}}"
-					],
-					"path": [
-						"chat",
-						"v2",
-						":id"
-					],
-					"variable": [
-						{
-							"key": "id",
-							"value": "{{chat_id}}"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Create Chat",
-			"id": "31a2eeab-b135-4795-ba8c-33003a8eeec2",
-			"protocolProfileBehavior": {
-				"disableBodyPruning": true
-			},
-			"request": {
-				"method": "POST",
-				"header": [],
-				"body": {
-					"mode": "raw",
-					"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"Which go version is used in the pdf?\",\n  \"chat_id\": \"{{chat_id}}\"\n}",
-					"options": {
-						"raw": {
-							"language": "json"
-						}
-					}
-				},
-				"url": {
-					"raw": "{{u}}/chat/v2",
-					"host": [
-						"{{u}}"
-					],
-					"path": [
-						"chat",
-						"v2"
 					]
 				}
 			},
