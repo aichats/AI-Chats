@@ -8,7 +8,7 @@
     "baseUrl": "./",
     "paths": {
       "@modules/*": ["src/modules/*"],
-      "@assets/*": ["src/assets/*"]
+      "@assets/*": ["public/assets/*"]
     },
 
     /* Bundler mode */
