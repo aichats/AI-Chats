@@ -8,7 +8,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
      "preview": "vite preview",
-    "deploy": "npm run build && surge build aichats.surge.sh ",
+    "deploy": "VITE_BASE_URL_PROD=https://34.199.237.66 npm run build && surge build aichats.surge.sh ",
     "gh": "gh-pages -d build"
   },
   "dependencies": {
