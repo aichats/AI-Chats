@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "01203207-078f-444b-bede-50ec3c99180f",
+		"_postman_id": "47c1b3bc-59db-466a-b1c5-7530131f8d5d",
 		"name": "Conversation",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "11058592-01203207-078f-444b-bede-50ec3c99180f"
+		"_uid": "11058592-47c1b3bc-59db-466a-b1c5-7530131f8d5d"
 	},
 	"item": [
 		{
@@ -12,7 +12,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "c04afb93-9a2c-4bc6-9f2c-3fa875c8b3ae",
+						"id": "3228bd46-1e93-466e-9ac1-a70ea35932cf",
 						"exec": [
 							"const {sender,message,chat_id} = pm.response.json()",
 							"",
@@ -26,7 +26,7 @@
 					}
 				}
 			],
-			"id": "3324e326-d3ac-4407-9b91-bd7f903f8d0d",
+			"id": "f8826392-6d0f-48c3-be8a-40342179e680",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -55,7 +55,7 @@
 			},
 			"response": [
 				{
-					"id": "87a878b6-ca16-4a48-99b7-1d1d5fa4ea25",
+					"id": "84a57afd-2a72-4390-8bec-dff40a83d9bc",
 					"name": "I am Hiro v1",
 					"originalRequest": {
 						"method": "POST",
@@ -83,7 +83,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -106,8 +105,8 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \" Hi Hiro, I'm doing great! How about you?\",\n    \"chat_id\": \"6bf57d6585cb4a3e85078989bf569051\"\n}"
 				},
 				{
-					"id": "7bc9ec6e-5982-4e99-98cc-1a6540659dda",
-					"name": "I am Hiro v2",
+					"id": "ce6c4b8e-4025-413e-bd4a-e629014023b4",
+					"name": "I am Hiro v2-alpha",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
@@ -134,7 +133,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -155,6 +153,60 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"Hello Hiro, I'm an AI language model, so I don't have feelings in the way humans do, but I'm here to help you with any questions you have. How can I assist you today?\",\n    \"chat_id\": \"b8c4097d735f4d63ad29422c966d6587\"\n}"
+				},
+				{
+					"id": "bfbc7dc7-df78-413a-9cbb-a7441202731f",
+					"name": "I am Hiro v2-beta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"Hi i am Hiro,Hello, how are you?\",\n  \"chat_id\":null\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{u}}/chat/v2",
+							"host": [
+								"{{u}}"
+							],
+							"path": [
+								"chat",
+								"v2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Jun 2023 20:38:05 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "186"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"Hello Hiro! I'm an AI assistant, so I don't have feelings, but I'm here to help you. How can I assist you today?\",\n    \"chat_id\": \"fff977984f5e4073aa6b77d117bf7602\"\n}"
 				}
 			]
 		},
@@ -164,7 +216,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "399b197c-abe1-42b3-a41a-5d6cbdb70d45",
+						"id": "ec2a7b26-3268-4a91-b98d-516d823990d2",
 						"exec": [
 							"console.log(\"chat_id\",pm.environment.get(\"chat_id\"))"
 						],
@@ -172,7 +224,7 @@
 					}
 				}
 			],
-			"id": "35094ada-3806-4ee0-8e49-3158bc07029a",
+			"id": "a596e679-e17b-4b82-b3e9-88689ab585c2",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -201,7 +253,7 @@
 			},
 			"response": [
 				{
-					"id": "676fb079-01bc-4949-967a-3e099de5b286",
+					"id": "5900a86f-302b-4ddc-8fb3-dd0308c32e96",
 					"name": "Conversation Update v1",
 					"originalRequest": {
 						"method": "POST",
@@ -229,7 +281,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -250,12 +301,66 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \" Hiro is you! You just introduced yourself as Hiro.\",\n    \"chat_id\": \"6bf57d6585cb4a3e85078989bf569051\"\n}"
+				},
+				{
+					"id": "d6a563bb-2962-4a6c-a9f6-1915a26a2bdb",
+					"name": "Conversation Update v2-beta",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"who is Hiro?\",\n  \"chat_id\": \"{{chat_id}}\"\n} ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{u}}/chat/v2",
+							"host": [
+								"{{u}}"
+							],
+							"path": [
+								"chat",
+								"v2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "nginx/1.18.0 (Ubuntu)"
+						},
+						{
+							"key": "Date",
+							"value": "Wed, 28 Jun 2023 20:39:02 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "185"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"I'm sorry, but without any specific context or additional information, I don't have any information about Hiro.\",\n    \"chat_id\": \"fff977984f5e4073aa6b77d117bf7602\"\n}"
 				}
 			]
 		},
 		{
 			"name": "Chat Get ID",
-			"id": "e6a12359-67a1-4924-88db-b92edbe2c6d6",
+			"id": "1b1c6931-bcf6-403f-9a22-be7234c5a90d",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -282,7 +387,7 @@
 			},
 			"response": [
 				{
-					"id": "f3115bd9-96a2-48e7-b8a2-41076a6e37b8",
+					"id": "3733a9f9-042b-400b-a9a6-dcc0dc31582b",
 					"name": "Chat Get ID",
 					"originalRequest": {
 						"method": "GET",
@@ -308,7 +413,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -331,7 +435,7 @@
 					"body": "{\n    \"total\": 4,\n    \"msgs\": [\n        {\n            \"sender\": \"user\",\n            \"message\": \"I am Hiro, I am a golang engineer.\",\n            \"chat_id\": \"73b3df71685046e696542fd5cd9d74e1\"\n        },\n        {\n            \"sender\": \"bot\",\n            \"message\": \" Hi Hiro, I'm an AI. It's nice to meet you. I'm impressed that you are a golang engineer. What do you like most about working with golang?\",\n            \"chat_id\": \"73b3df71685046e696542fd5cd9d74e1\"\n        },\n        {\n            \"sender\": \"user\",\n            \"message\": \"who is Hiro?\",\n            \"chat_id\": \"73b3df71685046e696542fd5cd9d74e1\"\n        },\n        {\n            \"sender\": \"bot\",\n            \"message\": \" Hiro is the name you just introduced yourself with. You said you are a golang engineer.\",\n            \"chat_id\": \"73b3df71685046e696542fd5cd9d74e1\"\n        }\n    ]\n}"
 				},
 				{
-					"id": "f5b872bc-c545-4e08-a2ea-ac241eb33747",
+					"id": "4b9069d1-a3e2-4c60-b430-e6af99f8d9f3",
 					"name": "Chat Get ID",
 					"originalRequest": {
 						"method": "GET",
@@ -357,7 +461,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -383,7 +486,7 @@
 		},
 		{
 			"name": "I need some help",
-			"id": "b21bdcb1-35fc-413f-9102-b8609237b730",
+			"id": "1eca1e0b-871b-449b-ab60-553ee2d2d5ff",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -412,7 +515,7 @@
 			},
 			"response": [
 				{
-					"id": "02169be1-bb61-4242-a3d8-37840b7f5f15",
+					"id": "5accdc80-1d7d-4e52-a5bb-b1824ae14c68",
 					"name": "I need some help v1",
 					"originalRequest": {
 						"method": "POST",
@@ -440,7 +543,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -466,7 +568,7 @@
 		},
 		{
 			"name": "I want to see implementations of concurrency",
-			"id": "c872e905-2076-44a6-b4e3-5a2333de0daf",
+			"id": "e3a63244-2843-4892-b373-61a918e07c23",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -495,7 +597,7 @@
 			},
 			"response": [
 				{
-					"id": "d3904b19-c75f-4947-9e00-77c41b606828",
+					"id": "2e7ae104-853d-4570-b5a5-4c53d1cdd754",
 					"name": "I want to see implementations of concurrency v1",
 					"originalRequest": {
 						"method": "POST",
@@ -523,7 +625,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -549,7 +650,7 @@
 		},
 		{
 			"name": "Give me a breif description of myself v1",
-			"id": "84f743d5-e581-4b38-9f28-efd993f5ce52",
+			"id": "9d79463b-9fb3-4510-aeee-6ae94363dae9",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -578,7 +679,7 @@
 			},
 			"response": [
 				{
-					"id": "dae2112f-bfeb-486b-aae2-1e7c8058ccdf",
+					"id": "8827e369-aa23-4f09-8255-ebeef6de497c",
 					"name": "Give me a breif description of myself v1",
 					"originalRequest": {
 						"method": "POST",
@@ -606,7 +707,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -632,7 +732,7 @@
 		},
 		{
 			"name": "PDF Upload",
-			"id": "671e1572-fb31-4273-8ef8-bb367cc2cb74",
+			"id": "42f21eab-7c08-4424-aae3-416603d9827c",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -645,9 +745,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": [
-								"go.pdf"
-							]
+							"src": "go.pdf"
 						},
 						{
 							"key": "",
@@ -684,7 +782,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "2329c47e-a7d7-4856-a1d8-f061f3b64b9b",
+						"id": "3f6cdb8b-3530-4627-88e3-6e90677f7a38",
 						"exec": [
 							""
 						],
@@ -692,7 +790,7 @@
 					}
 				}
 			],
-			"id": "6eb7450e-cc5a-4d18-83aa-36f8b784b0c7",
+			"id": "e7b7beef-800f-4e53-a424-cebba43c65d0",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -721,7 +819,7 @@
 			},
 			"response": [
 				{
-					"id": "04115e63-2705-4df9-9d1f-4125d171b131",
+					"id": "218452d4-b803-4404-a480-1a506db36b75",
 					"name": "Specific to pdf-v2",
 					"originalRequest": {
 						"method": "POST",
@@ -749,7 +847,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -779,7 +876,7 @@
 				{
 					"listen": "prerequest",
 					"script": {
-						"id": "e8be4d4e-9141-4b32-a3cb-509de2406b3d",
+						"id": "1f10d1bd-953b-4edf-80ab-227c9093088b",
 						"exec": [
 							"const body = JSON.parse(pm.request.body.raw);",
 							"",
@@ -808,7 +905,7 @@
 					}
 				}
 			],
-			"id": "01d6e9a8-13eb-4b68-a436-88e768573e1d",
+			"id": "cef54c8b-c5d5-4a2e-b84a-a1a17c90f93f",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -837,7 +934,7 @@
 			},
 			"response": [
 				{
-					"id": "3fb46426-0c85-4f09-a0f7-1a8d538e0dd8",
+					"id": "f9d89f23-d27f-4c56-b71c-4471b878b73f",
 					"name": "Generic and related to pdf",
 					"originalRequest": {
 						"method": "POST",
@@ -865,7 +962,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -891,7 +987,7 @@
 		},
 		{
 			"name": "Are u aware of the document",
-			"id": "54cc4813-c375-4cfc-8202-02d44008dadf",
+			"id": "f1e0c6d9-7fb4-432c-8b42-d69ff0f1c587",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -920,7 +1016,7 @@
 			},
 			"response": [
 				{
-					"id": "84822bb3-ad96-4f35-a47e-d5c13ed6a3fc",
+					"id": "36fae11b-2230-4173-9559-04635d54d65e",
 					"name": "v2",
 					"originalRequest": {
 						"method": "POST",
@@ -948,7 +1044,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",

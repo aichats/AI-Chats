@@ -1,14 +1,14 @@
 {
 	"info": {
-		"_postman_id": "c39a6bcb-c121-4917-9374-02b7cf96d9bb",
+		"_postman_id": "7e567dcb-7283-446a-bda6-6f40759d1b9a",
 		"name": "AIChats",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_uid": "11058592-c39a6bcb-c121-4917-9374-02b7cf96d9bb"
+		"_uid": "11058592-7e567dcb-7283-446a-bda6-6f40759d1b9a"
 	},
 	"item": [
 		{
 			"name": "Home",
-			"id": "7f673a66-ebdf-4a5d-b766-229567cc9a2a",
+			"id": "07219cc6-e9ab-4895-b8ff-c74a784b22a4",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -24,7 +24,7 @@
 			},
 			"response": [
 				{
-					"id": "639a4e76-5fd9-471d-bfd2-cf0d7b2690e0",
+					"id": "4ba91acb-32da-4b9a-b1d5-eaf44bcc2c35",
 					"name": "Root",
 					"originalRequest": {
 						"method": "GET",
@@ -39,7 +39,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -69,7 +68,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "8e3a04ef-d806-45d7-95f1-9309881acac7",
+						"id": "847b8947-1eb3-42fb-a201-c9d2e320526a",
 						"exec": [
 							"let body = pm.response.json()",
 							"",
@@ -87,7 +86,7 @@
 					}
 				}
 			],
-			"id": "fdabfe41-479e-4d89-a5ea-269d96ef9b8a",
+			"id": "5b7feb73-fd3b-4541-bb53-b118c0976767",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -106,7 +105,7 @@
 			},
 			"response": [
 				{
-					"id": "eaf27b9c-2067-4a36-9957-da7ca1745c65",
+					"id": "8b7776ab-5401-47ee-87a1-3aedfa07ff39",
 					"name": "Root",
 					"originalRequest": {
 						"method": "GET",
@@ -121,7 +120,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -147,7 +145,7 @@
 		},
 		{
 			"name": "Cors",
-			"id": "7d7b00fc-332d-42a2-853e-18cd620928a2",
+			"id": "0d5424f2-ca19-4b6a-b929-b369a898d2f3",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -190,7 +188,7 @@
 				{
 					"listen": "test",
 					"script": {
-						"id": "a7ba25ea-cac5-4302-96e7-d646e9e4f746",
+						"id": "b954037a-039a-479c-a021-218da1183fd3",
 						"exec": [
 							"function sendRequest(id,s){",
 							"    console.log(id,s)",
@@ -211,7 +209,7 @@
 					}
 				}
 			],
-			"id": "878715f2-ad42-483d-8e71-23a292836985",
+			"id": "0b3f2b64-23fa-4321-85c0-1474ee422b36",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -240,7 +238,7 @@
 			},
 			"response": [
 				{
-					"id": "0f5fed91-f58f-4dc1-a29c-df527b1d05fb",
+					"id": "4d5ca436-8fec-42ec-a627-bb15b8e6914e",
 					"name": "Chat Create v0",
 					"originalRequest": {
 						"method": "POST",
@@ -267,7 +265,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -290,7 +287,7 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"IndyStar\\n\\nWith the Joe Biden and Kamala Harris win looming, one can only hope that many minds will change. It appears that we may not know the actual outcome of this election for a while yet, and for many, that is concerning. What might be more concerning, however, is that this election has furthered the divide between many Americans.\\n\\nHow will we come together as a nation after such a heated and divisive election?\\n\\nThe battleground states of Wisconsin, Arizona\",\n    \"chat_id\": 1\n}"
 				},
 				{
-					"id": "261e29f8-c526-4eaa-bb02-48380f79c594",
+					"id": "9c0955fe-3d7c-44fc-84e4-1352e74d1922",
 					"name": "Chat Create v0",
 					"originalRequest": {
 						"method": "POST",
@@ -317,7 +314,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -340,7 +336,7 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"Starlight\\n\\nOne fine day, I looked up and saw the starlight in the sky. All of the stars were twinkling and it was such a beautiful sight. I felt like I could reach out and touch them and I felt so small and insignificant. The starlight had been there for millions of years, but no one had paid attention to it until that moment. I could feel the power of the universe in that moment, and it made me feel so connected to everything. I\",\n    \"chat_id\": \"1\"\n}"
 				},
 				{
-					"id": "137cd236-2dcb-4a85-ac4c-15a6f285ac9b",
+					"id": "da8de28c-c112-43a2-88d8-66c3ce76c294",
 					"name": "Chat Create v1",
 					"originalRequest": {
 						"method": "POST",
@@ -368,7 +364,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -391,7 +386,7 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \" Hi Hiro, it's nice to meet you. I'm an AI and I'm interested in learning more about Golang engineering. Can you tell me more about it?\",\n    \"chat_id\": \"03c5d673753743c8b38f30da9b58f802\"\n}"
 				},
 				{
-					"id": "bd1a75fb-5a53-4ac8-84ba-c379420403a8",
+					"id": "6f7660d6-3dbf-4d45-96ac-efd610d6e20c",
 					"name": "Chat Create v2",
 					"originalRequest": {
 						"method": "POST",
@@ -419,7 +414,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -445,7 +439,7 @@
 		},
 		{
 			"name": "PDF Upload",
-			"id": "8e7722a9-73a8-45ae-a4d0-8d9e4c6e1f27",
+			"id": "79848a1c-75f3-4a54-9a15-5bd111900158",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -458,9 +452,7 @@
 						{
 							"key": "file",
 							"type": "file",
-							"src": [
-								"/Users/hiro/aiFame/aichatsback/testdata/go.pdf"
-							]
+							"src": "/Users/hiro/aiFame/aichatsback/testdata/go.pdf"
 						},
 						{
 							"key": "filename",
@@ -491,7 +483,7 @@
 			},
 			"response": [
 				{
-					"id": "244e5280-9480-4f2f-9731-a05b85b28561",
+					"id": "3bd6a7ee-564c-4529-9bbd-322492ed21f6",
 					"name": "PDF Upload v0",
 					"originalRequest": {
 						"method": "POST",
@@ -529,7 +521,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -552,7 +543,7 @@
 					"body": "{\n    \"message\": \"Uploaded successfully\",\n    \"chat_id\": 1\n}"
 				},
 				{
-					"id": "3ae693d6-4c4e-4fb6-8f96-103514e2bf0b",
+					"id": "7f186524-63b6-44c5-a3a4-ced7910bff24",
 					"name": "PDF Upload v1 Doesnot support inference to chat",
 					"originalRequest": {
 						"method": "PUT",
@@ -591,7 +582,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -614,7 +604,7 @@
 					"body": "{\n    \"sender\": \"bot\",\n    \"message\": \"uploaded successfully\",\n    \"chat_id\": \"6bf57d6585cb4a3e85078989bf569051\"\n}"
 				},
 				{
-					"id": "fe6d737c-2bd3-40a7-93e3-36ea953f10cd",
+					"id": "f8f00968-65ec-4513-870b-ec8bd8a6c1c9",
 					"name": "PDF Upload v1.1",
 					"originalRequest": {
 						"method": "PUT",
@@ -659,7 +649,6 @@
 					"status": "Bad Request",
 					"code": 400,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -682,7 +671,7 @@
 					"body": "{\n    \"error\": \"Only pdf files are supported currently\",\n    \"chat_id\": \"3bf5cf7f40564a068db77a89707c5887\",\n    \"status_code\": 400\n}"
 				},
 				{
-					"id": "1b339b20-9414-4226-84c2-73bb4f4b04ce",
+					"id": "d3a2f08a-c701-49ca-9d02-58fbbaa30c8a",
 					"name": "PDF Upload v2",
 					"originalRequest": {
 						"method": "PUT",
@@ -727,7 +716,6 @@
 					"status": "OK",
 					"code": 200,
 					"_postman_previewlanguage": "json",
-					"_postman_previewtype": "html",
 					"header": [
 						{
 							"key": "date",
@@ -753,7 +741,7 @@
 		},
 		{
 			"name": "Healthcheck http",
-			"id": "29661ce6-d3fe-44f9-8b9c-646309ee68db",
+			"id": "d3547478-b080-4615-a0b0-514107cb03cd",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -775,7 +763,7 @@
 		},
 		{
 			"name": "Healthcheck https",
-			"id": "ae3ea6d6-7c4c-4d1c-ab31-0457a1513f20",
+			"id": "0598111d-3776-4048-9956-8cc4dee077f7",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -793,7 +781,7 @@
 		},
 		{
 			"name": "Get Chat",
-			"id": "227a9743-0ed6-49a8-9a74-5acf7aeea981",
+			"id": "3706798e-ad2a-4452-8b61-763f0291105b",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -822,7 +810,7 @@
 		},
 		{
 			"name": "Create Chat",
-			"id": "31a2eeab-b135-4795-ba8c-33003a8eeec2",
+			"id": "ca13481d-228a-4fd6-8538-1691f46a89e5",
 			"protocolProfileBehavior": {
 				"disableBodyPruning": true
 			},
@@ -831,7 +819,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n  \"sender\": \"user\",\n  \"message\": \"Which go version is used in the pdf?\",\n  \"chat_id\": \"{{chat_id}}\"\n}",
+					"raw": "{\"sender\":\"user\",\"message\":\"\\n\",\"chat_id\":\"771f4319-86a1-407c-9f6d-0a0f95f554a2\"}",
 					"options": {
 						"raw": {
 							"language": "json"
