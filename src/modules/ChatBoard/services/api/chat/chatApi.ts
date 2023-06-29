@@ -1,6 +1,7 @@
 import axiosInstance from "@modules/Shared/lib/axiosInstance";
 import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
 import {apiCreateMsg, apiUploadFile, CHAT_ID} from "@api/versions";
+import { logger } from '@utils/log.ts'
 export const createChat = async (
   data: {
     sender: string;
@@ -47,6 +48,7 @@ export const uploadPdf = async (
   chat_id: CHAT_ID
 ) => {
   // console.log(data.name);
+  logger.info(`starting upload for ${chat_id}`)
   const formData = new FormData();
 
   // Update the formData object

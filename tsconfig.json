@@ -9,7 +9,8 @@
     "paths": {
       "@modules/*": ["src/modules/*"],
       "@assets/*": ["public/assets/*"],
-      "@api/*": ["src/api/*"]
+      "@api/*": ["src/api/*"],
+      "@utils/*": ["src/utils/*"]
     },
 
     /* Bundler mode */
