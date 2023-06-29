@@ -2,7 +2,7 @@ export type v1 = "v1"
 export type v2 = "v2"
 export type v3 = "v3"
 
-export type CHAT_ID = string |null
+export type CHAT_ID = string | null
 
 export type supportedVersions = v1|v2|v3
 

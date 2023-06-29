@@ -1,6 +1,6 @@
 import axiosInstance from "@modules/Shared/lib/axiosInstance";
 import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
-import {apiCreateMsg, apiUploadFile, CHAT_ID} from "@api/versions.ts";
+import {apiCreateMsg, apiUploadFile, CHAT_ID} from "@api/versions";
 export const createChat = async (
   data: {
     sender: string;

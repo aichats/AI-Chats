@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import {CHAT_ID} from "@api/versions.ts";
+import {CHAT_ID} from "@api/versions";
 interface IRQ {
   sender: string;
   message: string;
