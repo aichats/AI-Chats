@@ -39,3 +39,4 @@ package-lock.json
 *.sln
 *.sw?
 .env
+.env-*
