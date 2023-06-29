@@ -63,10 +63,16 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to ${{env.domain}}
+
+      - name: Extract Branch Name
+        id: extract_branch
+        run: |
+          echo "::set-output name=branch_name::${{ github.ref.split('/')[2] }}"
+
+      - name: Deploy to ${{ steps.extract_branch.outputs.branch_name }}
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: ${{env.domain}}
+          domain: ${{ steps.extract_branch.outputs.branch_name }}
           project: './build'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
