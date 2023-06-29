@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import ScrollToBottom from "react-scroll-to-bottom";
 import { useQuery, useQueryClient } from "react-query";
 import { createChat, getChatById } from "@modules/ChatBoard/services/api/chat";
+import {CHAT_ID} from "@api/version";
 
 interface IRQ {
   sender: string;
