@@ -56,15 +56,8 @@ export const uploadPdf = async (
   // Update the formData object
   formData.append("file", data);
   try {
-    // const res = await axiosInstance({
-    //   url: `/chat/${chat_id == null ? 0 : chat_id}/upload`,
-    //   method: "POST",
-    //   data: data,
-    // });
-    const res = axios.put(
-      `${import.meta.env.VITE_BASE_URL_PROD}/chat/${
-        chat_id
-      }/upload/v2`,
+    const res = axiosInstance.put(
+        `/chat/${chat_id}/upload/v2`,
       formData,
       {
         headers: {
