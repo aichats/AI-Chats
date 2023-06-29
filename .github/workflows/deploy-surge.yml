@@ -70,10 +70,10 @@ jobs:
           token: ${{ secrets.surge_token }}
 
       - name: Deploy to aichats.surge.sh
-        if: ${{ github.ref }}=='main'
+        if: ${{ github.ref }} == 'main'
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: aichats.surge.sh
+          domain: 'aichats.surge.sh'
           project: './build'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
