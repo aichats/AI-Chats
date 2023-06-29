@@ -5,7 +5,7 @@ export const createChat = async (
   data: {
     sender: string;
     message: string;
-    chat_id: number | null;
+    chat_id: string | null;
   },
   client_id: number,
   type: string
@@ -44,7 +44,7 @@ export const uploadPdf = async (
   data: any,
   client_id: number,
   type: string,
-  chat_id: number | null
+  chat_id: string | null
 ) => {
   // console.log(data.name);
   const formData = new FormData();

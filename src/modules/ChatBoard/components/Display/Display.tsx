@@ -9,7 +9,7 @@ import { createChat, getChatById } from "@modules/ChatBoard/services/api/chat";
 interface IRQ {
   sender: string;
   message: string;
-  chat_id: number | null;
+  chat_id: string | null;
 }
 interface IRequest {
   out: IRQ;

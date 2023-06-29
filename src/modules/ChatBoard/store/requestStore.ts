@@ -3,7 +3,7 @@ import { persist } from "zustand/middleware";
 interface IRQ {
   sender: string;
   message: string;
-  chat_id: number | null;
+  chat_id: string | null;
 }
 interface IRequest {
   out: IRQ;
@@ -14,13 +14,13 @@ interface IRequest {
 
 interface Request {
   requests: IRequest[];
-  mainchat_id: number | null;
+  mainchat_id: string | null;
   requestLoading: boolean;
   setRequestLoading: (act: boolean) => void;
   setRequests: (list: IRequest[]) => void;
   addRequest: (
     msg: string,
-    chat_id: number | null,
+    chat_id: string | null,
     client_id: number,
     type: string
   ) => void;
