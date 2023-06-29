@@ -1,6 +1,6 @@
 import axiosInstance from "@modules/Shared/lib/axiosInstance";
 import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
-import axios from "axios";
+import {apiCreateMsg, apiUploadFile} from "@api/versions.ts";
 export const createChat = async (
   data: {
     sender: string;
@@ -11,11 +11,7 @@ export const createChat = async (
   type: string
 ) => {
   try {
-    const res = await axiosInstance({
-      url: "/chat/v2",
-      method: "POST",
-      data: data,
-    });
+    const res = await axiosInstance.post(apiCreateMsg(),data)
     const rData = res.data;
     useRequestStore.setState({ mainchat_id: rData.chat_id });
     useRequestStore.setState({
@@ -56,8 +52,8 @@ export const uploadPdf = async (
   // Update the formData object
   formData.append("file", data);
   try {
-    const res = axiosInstance.put(
-        `/chat/${chat_id}/upload/v2`,
+    const res = await axiosInstance.put(
+        apiUploadFile(chat_id),
       formData,
       {
         headers: {
@@ -65,7 +61,7 @@ export const uploadPdf = async (
         },
       }
     );
-    const rData = (await res).data;
+    const rData = res.data;
     useRequestStore.setState({ mainchat_id: rData.chat_id });
     useRequestStore.setState({
       requests: [
