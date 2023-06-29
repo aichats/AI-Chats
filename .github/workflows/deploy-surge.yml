@@ -64,11 +64,17 @@ jobs:
         run: npm run build
 
 
-      - name: Extract Branch Name
-        id: extract_branch
+      - name: Extract Domain
         run: |
-          branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" 
-          echo "domain=${branch//\//.}.surge.sh" >> $GITHUB_OUTPUT
+          if startsWith(github.ref, 'refs/tags/')
+          # It's a tag
+          tag="${{ github.ref#refs/tags/ }}"
+          echo "domain=${{ tag//\//. }}.surge.sh" >> $GITHUB_OUTPUT
+          else
+          # It's a commit on a branch
+          branch="${{ GITHUB_HEAD_REF:-${{ github.ref#refs/heads/ }} }}"
+          echo "domain=${{ branch//\//. }}.surge.sh" >> $GITHUB_OUTPUT
+          fi
 
       - name: Deploy to ${{ steps.extract_branch.outputs.domain }}
         uses: dswistowski/surge-sh-action@v1
