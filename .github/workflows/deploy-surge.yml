@@ -25,6 +25,7 @@ jobs:
 
     env:
       env: ${{secrets.ENV}}
+      domain: 'aichats.surge.sh'
 
     steps:
       - name: Checkout repository
@@ -59,10 +60,10 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Deploy to foo-bar.surge.sh
+      - name: Deploy to ${{env.domain}}
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: 'aichats.surge.sh'
+          domain: ${{env.domain}}
           project: './build'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
