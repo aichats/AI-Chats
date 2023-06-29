@@ -1,9 +1,10 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
+import {CHAT_ID} from "@api/versions.ts";
 interface IRQ {
   sender: string;
   message: string;
-  chat_id: string | null;
+  chat_id: CHAT_ID;
 }
 interface IRequest {
   out: IRQ;
@@ -14,13 +15,13 @@ interface IRequest {
 
 interface Request {
   requests: IRequest[];
-  mainchat_id: string | null;
+  mainchat_id:CHAT_ID;
   requestLoading: boolean;
   setRequestLoading: (act: boolean) => void;
   setRequests: (list: IRequest[]) => void;
   addRequest: (
     msg: string,
-    chat_id: string | null,
+    chat_id: CHAT_ID,
     client_id: number,
     type: string
   ) => void;

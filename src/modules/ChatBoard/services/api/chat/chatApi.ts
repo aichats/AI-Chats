@@ -1,11 +1,11 @@
 import axiosInstance from "@modules/Shared/lib/axiosInstance";
 import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
-import {apiCreateMsg, apiUploadFile} from "@api/versions.ts";
+import {apiCreateMsg, apiUploadFile, CHAT_ID} from "@api/versions.ts";
 export const createChat = async (
   data: {
     sender: string;
     message: string;
-    chat_id: string | null;
+    chat_id: CHAT_ID;
   },
   client_id: number,
   type: string
@@ -44,7 +44,7 @@ export const uploadPdf = async (
   data: any,
   client_id: number,
   type: string,
-  chat_id: string | null
+  chat_id: CHAT_ID
 ) => {
   // console.log(data.name);
   const formData = new FormData();
