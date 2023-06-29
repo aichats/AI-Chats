@@ -1,20 +1,20 @@
-import axiosInstance from "@modules/Shared/lib/axiosInstance";
-import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
-import {apiCreateMsg, apiUploadFile, CHAT_ID} from "@api/versions";
-import { logger } from '@utils/log.ts'
+import axiosInstance from '@modules/Shared/lib/axiosInstance'
+import { useRequestStore } from '@modules/ChatBoard/store/requestStore'
+import { apiCreateMsg, apiUploadFile, CHAT_ID } from '@api/versions'
+
 export const createChat = async (
   data: {
-    sender: string;
-    message: string;
-    chat_id: CHAT_ID;
+    sender: string
+    message: string
+    chat_id: CHAT_ID
   },
   client_id: number,
-  type: string
+  type: string,
 ) => {
   try {
-    const res = await axiosInstance.post(apiCreateMsg(),data)
-    const rData = res.data;
-    useRequestStore.setState({ mainchat_id: rData.chat_id });
+    const res = await axiosInstance.post(apiCreateMsg(), data)
+    const rData = res.data
+    useRequestStore.setState({ mainchat_id: rData.chat_id })
     useRequestStore.setState({
       requests: [
         ...useRequestStore.getState().requests,
@@ -33,44 +33,40 @@ export const createChat = async (
           type,
         },
       ],
-    });
-    useRequestStore.setState({ requestLoading: false });
-    return rData;
+    })
+    useRequestStore.setState({ requestLoading: false })
+    return rData
   } catch (error) {
-    useRequestStore.setState({ requestLoading: false });
-    return false;
+    useRequestStore.setState({ requestLoading: false })
+    return false
   }
-};
+}
 export const uploadPdf = async (
   data: any,
   client_id: number,
   type: string,
-  chat_id: CHAT_ID
+  chat_id: CHAT_ID,
 ) => {
   // console.log(data.name);
-  logger.info(`starting upload for ${chat_id}`)
-  const formData = new FormData();
+  // logger.info(`starting upload for ${chat_id}`)
+  const formData = new FormData()
 
   // Update the formData object
-  formData.append("file", data);
+  formData.append('file', data)
   try {
-    const res = await axiosInstance.put(
-        apiUploadFile(chat_id),
-      formData,
-      {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      }
-    );
-    const rData = res.data;
-    useRequestStore.setState({ mainchat_id: rData.chat_id });
+    const res = await axiosInstance.put(apiUploadFile(chat_id), formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      },
+    })
+    const rData = res.data
+    useRequestStore.setState({ mainchat_id: rData.chat_id })
     useRequestStore.setState({
       requests: [
         ...useRequestStore.getState().requests,
         {
           out: {
-            sender: "user",
+            sender: 'user',
             message: data.name,
             chat_id: chat_id,
           },
@@ -83,21 +79,21 @@ export const uploadPdf = async (
           type,
         },
       ],
-    });
-    useRequestStore.setState({ requestLoading: false });
-    return rData;
+    })
+    useRequestStore.setState({ requestLoading: false })
+    return rData
   } catch (error) {
-    useRequestStore.setState({ requestLoading: false });
-    return false;
+    useRequestStore.setState({ requestLoading: false })
+    return false
   }
-};
+}
 export const getChatById = async (id: number | null) => {
-  if (id == null) return;
+  if (id == null) return
   const res = await axiosInstance({
     // url of the api endpoint (can be changed)
     url: `/chat/${id}`,
-    method: "GET",
-  });
+    method: 'GET',
+  })
   // handle success
-  return res;
-};
+  return res
+}
