@@ -68,7 +68,7 @@ jobs:
         id: extract_domain
         run: |
           ref=$(git rev-parse --abbrev-ref HEAD)
-          echo "domain=${ref//\//.}" >> $GITHUB_OUTPUT
+          echo "domain=${ref//\//-}" >> $GITHUB_OUTPUT
 
       - name: Deploy to ${{ steps.extract_domain.outputs.domain }}
         uses: dswistowski/surge-sh-action@v1
