@@ -28,7 +28,7 @@ jobs:
 
     env:
       env: ${{secrets.ENV}}
-      domain: ${{ github.ref.split('/')[2] }}-aichats.surge.sh
+      domain: aichats.surge.sh
 
     steps:
       - name: Checkout repository
