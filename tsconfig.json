@@ -8,7 +8,8 @@
     "baseUrl": "./",
     "paths": {
       "@modules/*": ["src/modules/*"],
-      "@assets/*": ["public/assets/*"]
+      "@assets/*": ["public/assets/*"],
+      "@api/*": ["src/api/*"]
     },
 
     /* Bundler mode */
