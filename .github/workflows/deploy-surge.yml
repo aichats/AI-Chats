@@ -67,12 +67,12 @@ jobs:
       - name: Extract Branch Name
         id: extract_branch
         run: |
-          echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+          echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}"
 
       - name: Deploy to ${{ steps.extract_branch.outputs.branch_name }}
         uses: dswistowski/surge-sh-action@v1
         with:
-          domain: ${{ steps.extract_branch.outputs.branch_name }}.surge.sh
+          domain: ${{ steps.extract_branch.outputs.branch }}.surge.sh
           project: './build'
           login: ${{ secrets.surge_login }}
           token: ${{ secrets.surge_token }}
