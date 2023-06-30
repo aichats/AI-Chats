@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
-    "target": "ES2020",
+    "target": "es2022",
     "useDefineForClassFields": true,
-    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "lib": ["es2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
     "baseUrl": "./",
     "paths": {
       "@modules/*": ["src/modules/*"],
-      "@assets/*": ["public/assets/*"]
+      "@assets/*": ["public/assets/*"],
+      "@api/*": ["src/api/*"],
+      "@utils/*": ["src/utils/*"]
     },
 
     /* Bundler mode */
