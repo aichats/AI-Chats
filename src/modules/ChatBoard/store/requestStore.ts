@@ -1,81 +1,83 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import {CHAT_ID} from "@api/versions";
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
+import { CHAT_ID } from '@api/versions'
+
 interface IRQ {
-  sender: string;
-  message: string;
-  chat_id: CHAT_ID;
+  sender: string
+  message: string
+  chat_id: CHAT_ID
 }
+
 interface IRequest {
-  out: IRQ;
-  in: IRQ;
-  client_id: number;
-  type: string;
+  out: IRQ
+  in: IRQ
+  client_id: number
+  type: string
 }
 
 interface Request {
-  requests: IRequest[];
-  mainchat_id:CHAT_ID;
-  requestLoading: boolean;
-  setRequestLoading: (act: boolean) => void;
-  setRequests: (list: IRequest[]) => void;
+  requests: IRequest[]
+  mainchat_id: CHAT_ID
+  requestLoading: boolean
+  setRequestLoading: (act: boolean) => void
+  setRequests: (list: IRequest[]) => void
   addRequest: (
     msg: string,
     chat_id: CHAT_ID,
     client_id: number,
-    type: string
-  ) => void;
+    type: string,
+  ) => void
   updateRequest: (
     msg: string,
     chat_id: number,
     client_id: number,
-    type: string
-  ) => void;
+    type: string,
+  ) => void
 
-  removeRequests: () => void;
+  removeRequests: () => void
 }
 
 const updateIn = (
   obj: any,
   client_id: number,
   msg: string,
-  chat_id: number
+  chat_id: number,
 ) => {
   if (client_id !== obj.client_id) {
-    return obj;
+    return obj
   } else {
-    obj.in.msg = msg;
-    obj.in.chat_id = chat_id;
-    return obj;
+    obj.in.msg = msg
+    obj.in.chat_id = chat_id
+    return obj
   }
-};
+}
 const updateOut = (obj: any, client_id: number, chat_id: number) => {
   if (client_id !== obj.client_id) {
-    return obj;
+    return obj
   } else {
-    obj.out.chat_id = chat_id;
-    return obj;
+    obj.out.chat_id = chat_id
+    return obj
   }
-};
+}
 
 export const useRequestStore = create<Request>()(
   persist(
     (set) => ({
       requests: [],
       mainchat_id: null,
-      type: "",
+      type: '',
       requestLoading: false,
 
       setRequestLoading(act: boolean) {
         set(() => ({
           requestLoading: act,
-        }));
+        }))
       },
       //set requests array
       setRequests(list: IRequest[]) {
         set(() => ({
           requests: list,
-        }));
+        }))
       },
       //add to requests
       addRequest(msg: string, chat_id, client_id, type) {
@@ -84,20 +86,20 @@ export const useRequestStore = create<Request>()(
             ...state.requests,
             {
               out: {
-                sender: "user",
+                sender: 'user',
                 message: msg,
                 chat_id: chat_id ? chat_id : null,
               },
               in: {
-                sender: "bot",
-                message: "",
+                sender: 'bot',
+                message: '',
                 chat_id: null,
               },
               client_id,
               type,
             },
           ],
-        }));
+        }))
       },
 
       //update  requests
@@ -110,7 +112,7 @@ export const useRequestStore = create<Request>()(
             client_id: o.client_id,
             type,
           })),
-        }));
+        }))
       },
 
       //delete states
@@ -119,11 +121,11 @@ export const useRequestStore = create<Request>()(
       removeRequests() {
         set(() => ({
           requests: [],
-        }));
+        }))
       },
     }),
     {
-      name: "requestData",
-    }
-  )
-);
+      name: 'requestData',
+    },
+  ),
+)

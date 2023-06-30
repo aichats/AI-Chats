@@ -1,15 +1,15 @@
-import { ChatBoard } from "@modules/ChatBoard";
+import { ChatBoard } from '@modules/ChatBoard'
 
-import { QueryClient, QueryClientProvider } from "react-query";
+import { QueryClient, QueryClientProvider } from 'react-query'
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient()
 
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <ChatBoard />
     </QueryClientProvider>
-  );
+  )
 }
 
-export default App;
+export default App

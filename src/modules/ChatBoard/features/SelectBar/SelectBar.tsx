@@ -1,17 +1,16 @@
-import { FcGoogle } from "react-icons/fc";
-import { BiMessageSquareDots } from "react-icons/bi";
-import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
-import { useEffect, useState } from "react";
+import { BiMessageSquareDots } from 'react-icons/bi'
+import { useRequestStore } from '@modules/ChatBoard/store/requestStore'
+import { useEffect, useState } from 'react'
 
 export const SelectBar = () => {
-  const requestStore = useRequestStore();
-  const [focusedText, setFocusedText] = useState<string>("");
+  const requestStore = useRequestStore()
+  const [focusedText, setFocusedText] = useState<string>('')
   useEffect(() => {
     if (requestStore.requests.length > 0) {
-      setFocusedText(requestStore.requests[0].out.message);
-      console.log(requestStore.requests[0].out.chat_id);
+      setFocusedText(requestStore.requests[0].out.message)
+      console.log(requestStore.requests[0].out.chat_id)
     }
-  }, [requestStore]);
+  }, [requestStore])
   return (
     <div className="h-full w-[20%] bg-black p-2">
       <div className="text-2xl h-[5%]  text-slate-100 font-semibold text-center">
@@ -23,19 +22,18 @@ export const SelectBar = () => {
           {/* <small className="text-slate-400 font-bold">Previous 7 days</small> */}
           <ul>
             <li
-              className="text-slate-100 space-x-4 py-2 px-2 hover:bg-gray-700 rounded-md  
+              className="text-slate-100 space-x-4 py-2 px-2 hover:bg-gray-700 rounded-md
             flex items-center cursor-pointer my-3
             "
               data-te-toggle="tooltip"
               data-te-placement="right"
               data-te-ripple-init
               data-te-ripple-color="light"
-              title="Data For the test with longer information"
-            >
+              title="Data For the test with longer information">
               {focusedText && <BiMessageSquareDots size={16} />}
               <span>
-                {focusedText.substr(0, 30)}{" "}
-                {focusedText.length > 10 ? ". . ." : ""}
+                {focusedText.substr(0, 30)}{' '}
+                {focusedText.length > 10 ? '. . .' : ''}
               </span>
             </li>
           </ul>
@@ -51,5 +49,5 @@ export const SelectBar = () => {
         {/* <small>Ikeji chukwunonso</small> */}
       </div>
     </div>
-  );
-};
+  )
+}

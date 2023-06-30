@@ -1,1 +1,1 @@
-export * from "./SelectBar";
+export * from './SelectBar'

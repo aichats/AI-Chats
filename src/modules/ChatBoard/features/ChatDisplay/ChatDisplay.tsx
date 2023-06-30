@@ -1,5 +1,5 @@
-import { Display } from "@modules/ChatBoard/components/Display";
-import { ChatForm } from "@modules/ChatBoard/components/ChatForm";
+import { Display } from '@modules/ChatBoard/components/Display'
+import { ChatForm } from '@modules/ChatBoard/components/ChatForm'
 
 export const ChatDisplay = () => {
   return (
@@ -7,5 +7,5 @@ export const ChatDisplay = () => {
       <Display />
       <ChatForm />
     </div>
-  );
-};
+  )
+}

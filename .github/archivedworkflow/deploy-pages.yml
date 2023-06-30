@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 env:
-  VITE_BASE_URL_PROD: "https://34.199.237.66"
+  VITE_BASE_URL_PROD: 'https://34.199.237.66'
 
 permissions:
   contents: write
@@ -22,9 +22,9 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-#    defaults:
-#      run:
-#        working-directory:
+    #    defaults:
+    #      run:
+    #        working-directory:
 
     steps:
       - name: Checkout repository
