@@ -71,12 +71,22 @@ export const ChatForm = () => {
             value={text}
             className="w-full h-full  p-0 px-1 pt-2 text-sm resize-none  bg-slate-100 outline-none focus:outline-none border-none focus:ring-0"
           />
-          <button
-            type="submit"
-            className="p-3 text-slate-100 font-bold bg-green-600 rounded-md absolute top-1.5 right-3"
-          >
-            <PiPaperPlaneRightThin size={19} />
-          </button>
+          {text.trim().length > 0 ? (
+            <button
+              type="submit"
+              className="p-3 text-slate-100 font-bold bg-green-600 rounded-md absolute top-1.5 right-3"
+            >
+              <PiPaperPlaneRightThin size={19} />
+            </button>
+          ) : (
+            <button
+              type="submit"
+              disabled
+              className="p-3 text-black font-bold bg-gray-100  rounded-md absolute top-1.5 right-3"
+            >
+              <PiPaperPlaneRightThin size={19} />
+            </button>
+          )}
         </form>
       </div>
       {reqStore.requestLoading && (
