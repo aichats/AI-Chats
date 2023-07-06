@@ -7,11 +7,11 @@ on:
     paths:
       - '.github/workflows/deploy.yml'
   pull_request:
-    branches: [ "main" ]
+    branches: [ 'main' ]
   workflow_dispatch:
 
 env:
-  VITE_BASE_URL_PROD: "http://34.199.237.66"
+  VITE_BASE_URL_PROD: 'http://34.199.237.66'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -46,7 +46,9 @@ jobs:
         uses: actions/cache@v3
         with:
           path: ${{ steps.npm-cache.outputs.NPM_CACHE_DIR }}
-          key: npm-${{github.workflow}}-${{ runner.os }}-${{ hashFiles('**package.json') }}
+          key:
+            npm-${{github.workflow}}-${{ runner.os }}-${{
+            hashFiles('**package.json') }}
           restore-keys: |
             npm-${{github.workflow}}-${{ runner.os }}-${{ hashFiles('**package.json') }}
 

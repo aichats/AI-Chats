@@ -1,50 +1,51 @@
-import { FaUser } from "react-icons/fa";
-import { BsRobot } from "react-icons/bs";
-import { useRequestStore } from "@modules/ChatBoard/store/requestStore";
-import { useEffect, useState, useRef } from "react";
-import ScrollToBottom from "react-scroll-to-bottom";
-import { useQuery, useQueryClient } from "react-query";
-import { createChat, getChatById } from "@modules/ChatBoard/services/api/chat";
-import {CHAT_ID} from "@api/versions"
+import { FaUser } from 'react-icons/fa'
+import { BsRobot } from 'react-icons/bs'
+import { useRequestStore } from '@modules/ChatBoard/store/requestStore'
+import { useEffect, useRef, useState } from 'react'
+import ScrollToBottom from 'react-scroll-to-bottom'
+import { useQueryClient } from 'react-query'
+import { CHAT_ID } from '@api/versions'
 
 interface IRQ {
-  sender: string;
-  message: string;
-  chat_id: CHAT_ID;
+  sender: string
+  message: string
+  chat_id: CHAT_ID
 }
+
 interface IRequest {
-  out: IRQ;
-  in: IRQ;
-  client_id: number;
-  type: string;
+  out: IRQ
+  in: IRQ
+  client_id: number
+  type: string
 }
 export const Display = () => {
-  const bottomEl = useRef<HTMLDivElement>(null);
-  const requestStore = useRequestStore();
-  const [requests, setRequests] = useState<IRequest[]>([]);
-  const [selectedData, setSelectedData] = useState<IRequest | {}>({});
-  const [chatId, setChatId] = useState<number | null>(null);
-  const [placeholder, setPlaceholder] = useState("");
+  const bottomEl = useRef<HTMLDivElement>(null)
+  const requestStore = useRequestStore()
+  const [requests, setRequests] = useState<IRequest[]>([])
+  const [selectedData, setSelectedData] = useState<IRequest | {}>({})
+  const [chatId, setChatId] = useState<number | null>(null)
+  const [placeholder, setPlaceholder] = useState('')
 
-  const index = useRef(0);
-  const queryClient = useQueryClient();
+  const index = useRef(0)
+  const queryClient = useQueryClient()
 
   useEffect(() => {
     if (Object.keys(selectedData).length > 0) {
       function tick() {
         setPlaceholder(
           //@ts-ignore
-          (prev) => prev + selectedData.in.message[index.current]
-        );
-        index.current++;
+          (prev) => prev + selectedData.in.message[index.current],
+        )
+        index.current++
       }
+
       //@ts-ignore
       if (index.current < selectedData.in.message.length) {
-        const addChar = setInterval(tick, 500);
-        return () => clearInterval(addChar);
+        const addChar = setInterval(tick, 500)
+        return () => clearInterval(addChar)
       }
     }
-  }, [selectedData, placeholder]);
+  }, [selectedData, placeholder])
 
   //reload problems query
   // const reloadProblemQuery = () => {
@@ -59,31 +60,31 @@ export const Display = () => {
   // });
 
   useEffect(() => {
-    const requestList = requestStore.requests;
+    const requestList = requestStore.requests
 
     if (requestStore.requests.length > 0) {
-      setRequests(requestList);
+      setRequests(requestList)
     }
-  }, [requestStore]);
+  }, [requestStore])
 
   useEffect(() => {
     //get last item
     if (requests.length > 0) {
-      const lastItem = requests[requests.length - 1];
-      const val = new SpeechSynthesisUtterance(`${lastItem.in.message}`);
-      if (lastItem.type.toUpperCase() !== "FILE") {
-        window.speechSynthesis.speak(val);
+      const lastItem = requests[requests.length - 1]
+      const val = new SpeechSynthesisUtterance(`${lastItem.in.message}`)
+      if (lastItem.type.toUpperCase() !== 'FILE') {
+        window.speechSynthesis.speak(val)
       }
     }
-  }, [requests]);
+  }, [requests])
 
   useEffect(() => {
-    bottomEl.current?.scrollIntoView({ behavior: "smooth" });
+    bottomEl.current?.scrollIntoView({ behavior: 'smooth' })
     window.scrollTo({
       top: 0,
-      behavior: "smooth",
-    });
-  }, []);
+      behavior: 'smooth',
+    })
+  }, [])
 
   return (
     <div className="h-[80%] bg-orange-50 p-4 overflow-y-auto ">
@@ -138,5 +139,5 @@ export const Display = () => {
         )}
       </ScrollToBottom>
     </div>
-  );
-};
+  )
+}

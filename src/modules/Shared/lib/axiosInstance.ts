@@ -1,30 +1,31 @@
-import axios from "axios";
+import axios from 'axios'
+
 const axiosInstance = axios.create({
   baseURL: import.meta.env.VITE_BASE_URL_PROD,
-    maxRedirects: 2,
+  maxRedirects: 2,
   // headers: {
   //   //  Authorization: `<Your Auth Token>`,
   //   "Content-Type": "application/json",
   //   timeout: 1000,
   // },
   // .. other options
-});
+})
 
 axiosInstance.interceptors.request.use(
   (config) => {
     // config.headers["Content-Type"] = "application/json";
-    config.headers["accept"] = "application/json";
+    config.headers['accept'] = 'application/json'
 
-    return config;
+    return config
   },
   (error) => {
-    Promise.reject(error);
-  }
-);
+    Promise.reject(error)
+  },
+)
 
 axiosInstance.interceptors.response.use(
   (response) => {
-    return response;
+    return response
   },
   function (error) {
     // const originalRequest = error.config;
@@ -34,8 +35,8 @@ axiosInstance.interceptors.response.use(
       // toast.error("Session expired. Authenticating");
     }
 
-    return Promise.reject(error);
-  }
-);
+    return Promise.reject(error)
+  },
+)
 
-export default axiosInstance;
+export default axiosInstance

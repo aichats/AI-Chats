@@ -1,5 +1,5 @@
-import { ChatDisplay } from "./features/ChatDisplay";
-import { SelectBar } from "./features/SelectBar";
+import { ChatDisplay } from './features/ChatDisplay'
+import { SelectBar } from './features/SelectBar'
 
 export function ChatBoard() {
   return (
@@ -7,5 +7,5 @@ export function ChatBoard() {
       <SelectBar />
       <ChatDisplay />
     </div>
-  );
+  )
 }

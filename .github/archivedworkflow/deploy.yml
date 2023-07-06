@@ -5,7 +5,7 @@ on:
     branches:
       - main # Adjust the branch name as per your project setup
   pull_request:
-    branches: [ "main" ]
+    branches: [ 'main' ]
   workflow_dispatch:
 
 concurrency:
