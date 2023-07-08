@@ -4,14 +4,16 @@ on:
   push:
     branches:
       - main # Adjust the branch name as per your project setup
+      - "**"
     paths:
       - '.github/workflows/deploy.yml'
-  pull_request:
-    branches: [ 'main' ]
+    tags:
+      - "*"
+      - "**"
   workflow_dispatch:
 
 env:
-  VITE_BASE_URL_PROD: 'http://34.199.237.66'
+  VITE_BASE_URL_PROD: 'https://aichatsback.up.railway.app'
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -24,10 +26,11 @@ permissions:
 
 jobs:
   deploy:
+
     runs-on: ubuntu-latest
-    #    defaults:
-    #      run:
-    #        working-directory:
+    defaults:
+      run:
+        working-directory: ./
 
     steps:
       - name: Checkout repository
@@ -55,11 +58,43 @@ jobs:
       - name: Install dependencies
         run: npm install --include=dev
 
-      - name: Deploy React to GitHub Pages
-        uses: bitovi/github-actions-react-to-ghp@v1.2.0
+      - name: Get working directory
+        id: wkdir
+        run: | #use it later
+          echo "wkdir=$(pwd)" >> $GITHUB_OUTPUT 
+
+      - name: Build
+        run: |
+          npm run build
+
+      - name: Fix Build
+        run: |
+          sed -i 's/\/assets/.\/assets/g' ./build/index.html
+          echo "fixed build"
+
+      #      - name: Deploy
+      #        run: |
+      #          git config --global user.email "laciferin@gmail.com"
+      #          git config --global user.name "Hiro"
+      #          npm run gh
+
+#      - name: Upload artifact
+#        uses: actions/upload-pages-artifact@v1
+#        with:
+#          # Upload entire repository
+#          path: './build'
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          checkout: false
-          # Specifies the path of the static assets after building
-          path: ${{ github.workspace }}/build
-          # Specifies the command to run after npm ci for the build
-          build_command: npm run build
+          personal_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ github.workspace }}/build
+#          cname: github.com/aichats/aichats.app
+          publish_branch: gh-pages
+          commit_message: ${{ github.event.head_commit.message }}
+          full_commit_message: ${{ github.event.head_commit.message }}
+          allow_empty_commit: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+
