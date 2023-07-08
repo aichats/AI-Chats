@@ -7,6 +7,9 @@ on:
       - "**"
     paths:
       - '.github/workflows/deploy.yml'
+    tags:
+      - "*"
+      - "**"
   workflow_dispatch:
 
 env:
@@ -68,4 +71,12 @@ jobs:
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: "./build"
-#          publish_branch: gh-pages
+          cname: github.com
+          publish_branch: gh-pages
+          commit_message: ${{ github.event.head_commit.message }}
+          full_commit_message: ${{ github.event.head_commit.message }}
+          allow_empty_commit: true
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+
