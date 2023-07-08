@@ -69,8 +69,8 @@ jobs:
 
       - name: Fix Build
         run: |
-          #          sed -i 's/\/assets/.\/assets/g' ./build/index.html
-               echo "fixed build"
+          sed -i 's/\/assets/.\/assets/g' ./build/index.html
+          echo "fixed build"
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
