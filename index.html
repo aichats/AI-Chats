@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-<link rel="apple-touch-icon" sizes="192x192" href="/src/assets/apple-touch-icon-57x57.png" />
-<link rel="apple-touch-icon" sizes="512x512" href="/src/assets/apple-touch-icon-512x512.png" />
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon-204ffe5a.png" />
+    <meta charset='UTF-8' />
+    <link
+      href='/assets/android-chrome-192x192.png'
+      rel='apple-touch-icon'
+      sizes='192x192'
+    />
+    <link
+      href='/assets/android-chrome-512x512.png'
+      rel='apple-touch-icon'
+      sizes='512x512'
+    />
+    <link
+      href='/assets/apple-touch-icon.png'
+      rel='apple-touch-icon'
+      sizes='180x180'
+    />
 
-<link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAkhJREFUOE+lkz1vE0EQhp89n88+X+I4EUlkmqBIGCUK+RA1CJSCBtJRUCLxA2gpqZBASIiCmi4VfwABSoFoEAUhaUISIAkxGFv+ujuffR+LdkVE7EDFNquVZnbe95kZUavVZKFQoNVqMTQ0hO/7ZDIZoijCMAzUSZIE0zTpdrvkcjlc1yWfz9NoNBBxHMvjydlsll6vRyqVQkqJ53lYlqXf6g6CoO8TUa/XpaqsAm3b1lVEyqDj+QhDUD4sUy6XWVhcJGfbWl2n08FxHK1EhGEoleyjykr2j0aTew+fMz11ChmHvP+4x53byyydnyE9oEQ0m02pklVlJbFSqfDk2Qseb1ZJNrYhjjGWZlgZjnh09ybFYlFbVEqUHREEgQzDkHQ6rcE1Wy0erK7xtJsnefkG0QsR15dZaR5w/9YVTheLGuhRjnBdVypAcRxrUIr4YbXG6qt11r9UieKE6QmHGxdLzJXOYh6LVTnC932paAshNHV9A7s7u3ieq63ZOYfSuRKWaf6J+R174oMEiecHrL3b4tqleX5WKrz9sMOFhVmK43lMw+grdsJC1W2z/2kbZ3iElDPG5oFH1PjG3FSBwuQkEyN54jjRdrWFQYi1dhu/3abRbGAkUpNueC6z8/PYlkUh5/RDHGyjoqtAbXw/ZGtvn6DXpTA6ytXZOWSS6G71tXFwkHQ7wwiRSlHvBigmY1lbz8NR+46P9F9HuWmmed1N8/mrIEngzBRctnuMxyGWNTDK/1qm0DTxEolE4BiQjiIyf1um/13nX0crpPrBnhQiAAAAAElFTkSuQmCC" />
-<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,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" />
-<link rel="icon" type="image/png" sizes="48x48" href="/src/assets/favicon.png" />
-<!-- <link rel="manifest" href="/src/assets/site.webmanifest" /> -->
+    <link
+      href='/assets/favicon-16x16.png'
+      rel='icon'
+      sizes='16x16'
+      type='image/png'
+    />
+    <link
+      href='/assets/favicon-32x32.png'
+      rel='icon'
+      sizes='32x32'
+      type='image/png'
+    />
+    <link
+      href='/assets/favicon.ico'
+      rel='icon'
+      sizes='48x48'
+      type='image/png'
+    />
+    <link href='/assets/site.webmanifest' rel='manifest' />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ai - chats</title>
-    <script type="module" crossorigin src="/assets/index-fcc1b626.js"></script>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport' />
+    <title>AIChats</title>
+    <script type="module" crossorigin src="/assets/index-daac5983.js"></script>
     <link rel="stylesheet" href="/assets/index-c3a6b807.css">
   </head>
   <body>
