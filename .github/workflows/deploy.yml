@@ -83,7 +83,7 @@ jobs:
         with:
           personal_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ github.workspace }}/build
-          cname: github.com/aichats/aichats.app
+#          cname: github.com/aichats/aichats.app
           publish_branch: gh-pages
           commit_message: ${{ github.event.head_commit.message }}
           full_commit_message: ${{ github.event.head_commit.message }}
