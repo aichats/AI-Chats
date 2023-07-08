@@ -72,18 +72,18 @@ jobs:
           sed -i 's/\/assets/.\/assets/g' ./build/index.html
           echo "fixed build"
 
-      - name: Deploy
-        run: |
-          git config --global user.email "laciferin@gmail.com"
-          git config --global user.name "Hiro"
-          npm run gh
+      #      - name: Deploy
+      #        run: |
+      #          git config --global user.email "laciferin@gmail.com"
+      #          git config --global user.name "Hiro"
+      #          npm run gh
 
-#      - name: Upload artifact
-#        uses: actions/upload-pages-artifact@v1
-#        with:
-#          # Upload entire repository
-#          path: './build'
-#
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          # Upload entire repository
+          path: './build'
+
 #      - name: Deploy to GitHub Pages
 #        uses: peaceiris/actions-gh-pages@v3
 #        with:
