@@ -18,6 +18,9 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
+env:
+  VITE_BASE_URL_PROD: 'https://aichatsback.up.railway.app'
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -54,6 +57,7 @@ jobs:
         run: |
           echo $env > .env
           sed -i 's/ /\n/g' .env
+          echo "VITE_BASE_URL_PROD=$VITE_BASE_URL_PROD" >> .env #overriding the one defined
           source .env
 
       - name: Install dependencies
